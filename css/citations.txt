@@ -1,0 +1,136 @@
+=== CITATIONS FOR INDEX.HTML ===
+
+AI-ASSISTED CODE
+----------------
+Tool:   Gemini AI (April 2026)
+Prompt: "Help me customize the CSS variables, fix image paths for my projects, and rewrite descriptions to focus on my IT major at NOVA."
+Used in: Global CSS styles and Feature Sections of index.html
+Changes: Adjusted primary colors to blue/purple and updated project summary text.
+
+MEDIA SOURCES
+-------------
+Hero & Project Images
+   File:    images/hero.png, images/project2.png, images/h3.png
+   Source:  Personal screenshots and Unsplash, Canva
+   URL:     https://unsplash.com
+   License: Unsplash License (free to use)
+
+Profile photo
+   File:    images/me.jpg (if applicable)
+   Source:  Taken by me, April 2026
+   License: Original work
+
+Icon set
+   Source:  Phosphor Icons (CDN)
+   URL:     https://phosphoricons.com
+   License: MIT
+
+Font
+   Name:    Montserrat
+   Source:  Google Fonts
+   URL:     https://fonts.google.com/specimen/Montserrat
+   License: SIL Open Font License
+
+=== CITATIONS FOR ABOUT.HTML ===
+
+AI-ASSISTED CODE
+----------------
+Tool:    Gemini (April 2026)
+Prompt:  "Help me update the color palette and font family to match my brand across all pages. Adjust the bio section contrast and fix the Education Timeline structure."
+Used in: .bio-text h2, .bio-text p, .bio-section, and Education Timeline blocks in about.html and about.css.
+Changes: Swapped background colors for a dark theme, adjusted text contrast to white for readability, and updated professional descriptions for IT coursework.
+
+MEDIA SOURCES
+-------------
+Profile photo
+  File:    images/profile.jpg
+  Source:  Generated/Enhanced using Meta AI
+  License: Used as personal asset for academic project
+
+Hero background images
+  File:    images/h1.png, images/h2.png, images/h3.png
+  Source:  Meta AI generated visuals
+  License: Created for personal branding
+
+Icons
+  Source:  Phosphor Icons via CDN
+  URL:     https://phosphoricons.com
+  License: MIT
+
+Font
+  Name:    Google Sans / Arial (Fallback)
+  Source:  Google Fonts
+  License: Apache License, Version 2.0
+
+  === CITATIONS FOR PROJECTS.HTML ===
+AI-ASSISTED CODE & CONTENT
+Tool: GitHub Copilot & Gemini (April 2026)
+Prompts: Tab completion for the filterProjects() function.
+  Refactoring the "runaway button" logic for the Valentine project.
+  Generating professional English descriptions for project cards.
+
+Used in: projects.html (all project cards and scripts).
+Changes: Manually edited descriptions to match personal project goals and adjusted CSS Grid classes for the photography gallery.
+
+MEDIA SOURCES
+Project 1: Excel Dashboard
+  File: images/excel-project.png
+  Source: Screenshot of my own academic work in Excel.
+  License: Original work.
+Project 2: Photography Grid Showcase
+  File: images/photo-grid.png
+  Source: Mockup created by me in Canva using stock photography for UI/UX demonstration.
+  License: Original work / Canva Standard License.
+Project 3: Financial Accounting Analysis
+  File: images/accounting.png
+  Source: Screenshot of a presentation created by me in Canva.
+  License: Original work.
+Project 4: Multimedia Storytelling (Video)
+  File: images/intention.mov (or .mp4)
+  Source: Video edited and montaged by me in CapCut.
+  License: Original work.
+Project 5: Personal Brand Identity
+  File: images/brand-identity.png
+  Source: Design system and color palette created by me in Canva.
+ License: Original work.
+Featured Project: "The Irresistible Valentine"
+  File: images/valentine.png
+  Source: Screenshot of my custom interactive web application (302 lines of code).
+  License: Original work.
+
+  === CITATIONS FOR MULTIMEDIA.HTML ===
+AI-ASSISTED CODE
+ Tool: Gemini (Google AI, May 2026)
+ Prompt: "Create a responsive HTML/CSS layout for a multimedia portfolio with an infinite horizontal scroll, photo lightbox, and tabbed navigation."
+ Prompt: "Write a CSS @keyframes animation for a neon glow effect and heart pulse for a digital valentine project."
+*Used in: multimedia.html structure, css/multimedia.css, and custom animation cards (lines 380-420).
+ORIGINAL MEDIA (Created by Asemi Nasypbekova)
+ Video: images/intention.mp4 (or .mov)
+ Source: Recorded by me using iPhone 15; edited in CapCut, April 2026.
+ Photos: images/Screenshot2.png, images/ExcelScreen.png, images/AccountingPresentesion.png, images/canvaD.jpg, images/PHgrid.png, images/medicube-2.jpeg
+ Source: Original project screenshots and personal photography taken by me, 2025-2026.
+AI-GENERATED MEDIA
+ Image: (If any used as placeholders, e.g., images/strip-3.jpg)
+ Tool: Adobe Firefly / Gemini Image Generation (April 2026)
+ Prompt: "Abstract gradient background for a technology and wellness presentation, 16:9."
+STOCK / FREE MEDIA
+ Icons: Phosphor Icons (Licensed under MIT License).
+ Fonts: Google Fonts (Inter, Montserrat).
+
+=== CITATIONS FOR CONTACT.HTML ===
+AI-ASSISTED CODE
+ Tool: Gemini (Google AI, May 2026)
+ Prompt: "Help me integrate Formspree ID into my HTML form, set up the POST method, and ensure the two-column layout is balanced."
+ Prompt: "Fix my contact form validation logic so it correctly handles the success message after submission."
+ Used in: <form> action attribute, CSS layout blocks, and form validation script.
+MEDIA SOURCES
+ Icons: Phosphor Icons (CDN)
+ Source: Phosphor Icons library
+ URL: https://phosphoricons.com
+ License: MIT
+ORIGINAL MEDIA & LINKS
+ Profile Links: GitHub, Instagram, and LinkedIn URLs lead to my personal verified accounts.
+ Institution Info: Northern Virginia Community College (NVCC) academic details provided by the student.
+
+
+ 
