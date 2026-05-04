@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multimedia – My Portfolio</title>
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/multimedia.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/multimedia.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/multimedia.css):
+
+       1. VARIABLES & RESET  →  :root, body
+       2. HEADER             →  header, .brand, .desktop-nav
+       3. PAGE HERO          →  .page-hero, .page-hero h1
+       4. MEDIA TYPE TABS    →  .media-tabs, .tab-btn
+       5. VIDEO GALLERY      →  .video-grid, .video-card
+       6. IMAGE GALLERY      →  .image-gallery, .photo-item
+       7. ANIMATION GALLERY  →  .animation-gallery, .animation-card
+       8. TOOLS GRID         →  .tools-grid, .tool-card
+       9. CTA & FOOTER       →  .cta-band, footer
+      10. LIGHTBOX MODAL     →  .lightbox, .lightbox-img
+      11. ANIMATIONS         →  @keyframes, @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/multimedia.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a class="brand" href="index.html">Asemi's <span>Portfolio</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="multimedia.html" class="active">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMobileNav()"><span></span></button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"      onclick="toggleMobileNav()">Home</a>
+    <a href="about.html"      onclick="toggleMobileNav()">About</a>
+    <a href="projects.html"   onclick="toggleMobileNav()">Projects</a>
+    <a href="multimedia.html" class="active" onclick="toggleMobileNav()">Multimedia</a>
+    <a href="contact.html"    onclick="toggleMobileNav()">Contact</a>
+  </nav>
+
+  <main style="padding-top:64px;">
+
+    <!-- ── PAGE HERO ──
+      Pick ONE background style by setting the section's class:
+         class="page-hero hero-gradient"  →  animated gradient (no asset)
+         class="page-hero hero-image"     →  uncomment the <img>  below
+         class="page-hero hero-video"     →  uncomment the <video> below
+      Only ONE media element should be active at a time.
+    ── -->
+    <section class="page-hero hero-gradient">
+
+      <!-- (B) IMAGE OPTION — uncomment, set class="page-hero hero-image" above
+      <img
+        class="page-hero-media"
+        src="https://placehold.co/1920x1080?text=Multimedia+Hero"
+        alt="" aria-hidden="true" />
+      -->
+
+      <!-- (C) VIDEO OPTION — uncomment, set class="page-hero hero-video" above
+      <video
+        class="page-hero-media"
+        autoplay muted loop playsinline
+        poster="https://placehold.co/1920x1080?text=Multimedia+Hero+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">Creative Work</span>
+        <h1>Multimedia</h1>
+        <p>Video, photography, animation, and interactive media I created this semester.</p>
+      </div>
+    </section>
+
+    <!-- ── SCROLLING IMAGE STRIP ──
+      Auto-scrolling preview reel. Pauses on hover.
+      ★ HOW TO ADD YOUR IMAGES:
+        Replace each .scroll-tile placeholder with one of:
+          <div class="scroll-tile"><img src="https://placehold.co/400x300?text=Your+Image" alt="..." /></div>
+          <div class="scroll-tile"><video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop playsinline></video></div>
+        For seamless looping, the markup duplicates the tile set —
+        keep both copies in sync when you swap content.
+    ── -->
+    <section class="scrolling-strip" aria-label="Featured multimedia preview">
+      <div class="scroll-track">
+
+        <!-- ── Set 1 (visible) ── -->
+         <div class="scroll-tile">
+      <img src="images/Screenshot2.png" alt="Digital Valentine">
+      <span class="scroll-tile-caption">Interactive · Valentine App</span>
+    </div>
+    <div class="scroll-tile">
+      <img src="images/ExcelScreen.png" alt="Excel Dashboard">
+      <span class="scroll-tile-caption">Data · Excel Analysis</span>
+    </div>
+    <div class="scroll-tile">
+      <img src="images/AccountingPresentesion.png" alt="Accounting Presentation">
+      <span class="scroll-tile-caption">Business · Financial Report</span>
+    </div>
+    <div class="scroll-tile">
+      <img src="images/canvaD.jpg" alt="Brand Identity">
+      <span class="scroll-tile-caption">Design · Brand Identity</span>
+    </div>
+    <div class="scroll-tile">
+      <img src="images/PHgrid.png" alt="Photography Grid">
+      <span class="scroll-tile-caption">Web · Photography Grid</span>
+    </div>
+    <div class="scroll-tile">
+      <img src="images/medicube-2.jpeg" alt="Tech & Wellness">
+      <span class="scroll-tile-caption">Photo · Tech & Wellness</span>
+    </div>
+        
+
+        <!-- ── Set 2 (duplicate — required for seamless loop) ──
+             Must mirror Set 1 exactly. -->
+        <div class="scroll-tile" aria-hidden="true">
+      <img src="images/Screenshot2.png" alt="Digital Valentine">
+      <span class="scroll-tile-caption">Interactive · Valentine App</span>
+    </div>
+    <div class="scroll-tile" aria-hidden="true">
+      <img src="images/ExcelScreen.png" alt="Excel Dashboard">
+      <span class="scroll-tile-caption">Data · Excel Analysis</span>
+    </div>
+    <div class="scroll-tile" aria-hidden="true">
+      <img src="images/AccountingPresentesion.png" alt="Accounting Presentation">
+      <span class="scroll-tile-caption">Business · Financial Report</span>
+    </div>
+    <div class="scroll-tile" aria-hidden="true">
+      <img src="images/canvaD.jpg" alt="Brand Identity">
+      <span class="scroll-tile-caption">Design · Brand Identity</span>
+    </div>
+    <div class="scroll-tile" aria-hidden="true">
+      <img src="images/PHgrid.png" alt="Photography Grid">
+      <span class="scroll-tile-caption">Web · Photography Grid</span>
+    </div>
+    <div class="scroll-tile" aria-hidden="true">
+      <img src="images/medicube-2.jpeg" alt="Tech & Wellness">
+      <span class="scroll-tile-caption">Photo · Tech & Wellness</span>
+    </div>
+
+      </div>
+    </section>
+
+    <!-- ── TABS ──
+      Three tabs switch between Videos, Photos, and Animations.
+      JavaScript controls which .media-section shows.
+    ── -->
+    <div class="media-tabs">
+      <div class="media-tabs-inner">
+        <button class="tab-btn active" onclick="switchTab(this,'tab-video')">🎬 Videos</button>
+        <button class="tab-btn"        onclick="switchTab(this,'tab-photos')">📷 Photography</button>
+        <button class="tab-btn"        onclick="switchTab(this,'tab-animation')">✨ Animations</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+      TAB 1: VIDEOS
+    ══════════════════════════════════ -->
+    <section class="media-section active" id="tab-video">
+      <div class="video-gallery">
+
+        <div class="section-header fade-up">
+          <span class="section-label">Video Work</span>
+          <h2>Motion & storytelling</h2>
+          <p>Video projects created with footage, editing, and multimedia techniques.</p>
+        </div>
+
+        <div class="video-feature">
+
+          <!--
+            ★ HOW TO ADD YOUR VIDEO:
+            Replace the .video-placeholder div with:
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls poster="https://placehold.co/800x450?text=Video+Thumbnail"></video>
+            - controls = shows play/pause/volume buttons
+            - poster = thumbnail image shown before video plays
+          -->
+          <div class="video-card fade-up">
+            <div class="video-placeholder">
+              <video src="media/v2.mp4" controls poster="images/fotoLogo.jpeg" style="width:100%; border-radius:12px;"></video>
+        <div class="video-card-body">
+          <h3>Multimedia Storytelling: Intention</h3>
+          <p>A rhythmic social media edit created with After Effects. This project focuses on visual flow and matching transitions to the audio beat.</p>
+          <div class="video-tools">
+            <span class="tool-badge">After Effects</span>
+            <span class="tool-badge">Editing</span>
+            <span class="tool-badge">iPhone 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </section>
+
+    
+    <!-- ══════════════════════════════════
+      TAB 2: PHOTOGRAPHY
+    ══════════════════════════════════ -->
+    <section class="media-section" id="tab-photos">
+      <div class="image-gallery">
+
+        <div class="section-header fade-up">
+          <span class="section-label">Photography</span>
+          <h2>Images & visual storytelling</h2>
+          <p>
+            Photos I have taken and edited — from project documentation to
+            creative photography assignments.
+          </p>
+        </div>
+
+        <!--
+          CSS COLUMNS MASONRY LAYOUT
+          Images flow into columns automatically.
+          Click any image to open the lightbox.
+
+          ★ HOW TO ADD PHOTOS:
+          Replace each .photo-placeholder div with:
+          <img
+            src="https://placehold.co/600x400?text=Photo+1"
+            alt="Description of the photo"
+            onclick="openLightbox('https://placehold.co/600x400?text=Photo+1','Caption text')"
+          />
+          Then add the same caption in a .photo-caption span.
+        -->
+        <div class="photo-columns" id="photoColumns">
+
+          <!-- Фото 1: Твоя Валентинка -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/Screenshot2.png" 
+              alt="Digital Valentine Interface" 
+              onclick="openLightbox('images/Screenshot2.png', 'Interactive UI Design - Digital Valentine Application')">
+            <span class="photo-caption">UI Design: Digital Valentine</span>
+          </div>
+
+          <!-- Фото 2: Excel Дашборд -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/ExcelScreen.png" 
+              alt="Excel Data Analysis" 
+              onclick="openLightbox('images/ExcelScreen.png', 'Data Visualization and Pivot Tables in Microsoft Excel')">
+            <span class="photo-caption">Data Analysis: Excel Dashboard</span>
+          </div>
+
+          <!-- Фото 3: Технологичный уход (Medicube) -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/medicube-2.jpeg" 
+              alt="Medicube Age-R Booster Pro" 
+              onclick="openLightbox('images/medicube-2.jpeg', 'Product Photography: Medicube Age-R Booster Pro device')">
+            <span class="photo-caption">Tech & Wellness: Medicube Pro</span>
+          </div>
+
+          <!-- Фото 4: Фирменный стиль (Brand Identity) -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/canvaD.jpg" 
+              alt="Typography and Color Study" 
+              onclick="openLightbox('images/canvaD.jpg', 'Visual Identity Study: Typography and Color Palette')">
+            <span class="photo-caption">Design: Brand Identity Guide</span>
+          </div>
+
+          <!-- Фото 5: Сетка фотографий (Photography Grid) -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/PHgrid.png" 
+              alt="Web Layout Design" 
+              onclick="openLightbox('images/PHgrid.png', 'Multimedia Layout: Integrated Photography Grid')">
+            <span class="photo-caption">Web: Photography Grid Project</span>
+          </div>
+
+          <!-- Фото 6: Твоя работа (Restaurant/Workspace) -->
+          <div class="photo-item fade-up">
+            <img 
+              src="images/AccountingPresentesion.png" 
+              alt="Business Presentation" 
+              onclick="openLightbox('images/AccountingPresentesion.png', 'Financial Reporting and Business Presentation Layout')">
+            <span class="photo-caption">Business: Financial Report</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+      TAB 3: CSS ANIMATIONS
+      Live demos of CSS animations — these run purely in CSS!
+    ══════════════════════════════════ -->
+    <section class="media-section" id="tab-animation">
+      <div class="animation-gallery">
+
+        <div class="section-header fade-up">
+          <span class="section-label">CSS Animations</span>
+          <h2>Motion through code</h2>
+          <p>
+            These animations run with pure CSS — no video files, no JavaScript.
+            Replace these defaults with your own animated creations.
+          </p>
+        </div>
+
+        <div class="animation-grid">
+
+          <!-- ANIMATION DEMO 1: Pulse -->
+          <!-- ANIMATION 1: Pulse (из твоего проекта Валентинка) -->
+        <div class="animation-card fade-up">
+        <div class="animation-preview">
+      <!-- Этот элемент будет пульсировать, привлекая внимание к интерактиву -->
+        <div class="demo-pulse" style="background: radial-gradient(circle, #ff4d4d, #b30000);"></div>
+        </div>
+        <div class="animation-card-body">
+         <h3 style="color: #ffffff !important;">Interactive Pulse Effect</h3>
+        <p style="color: #cccccc !important;">A custom CSS animation created for my Valentine project to draw user attention to interactive elements like the "Yes" button.</p>
+        <div class="css-snippet" style="background: rgba(255,255,255,0.05); color: #bf00ff; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 0.8rem;">
+        animation: heartPulse 1.5s infinite
+      </div>
+    </div>
+  </div>
+
+          <!-- ANIMATION DEMO 2: Spin -->
+          <div class="animation-card fade-up">
+    <div class="animation-preview">
+      <div class="demo-float" style="background: linear-gradient(135deg, #6e8efb, #a777e3); width: 60px; height: 60px; border-radius: 12px;"></div>
+    </div>
+    <div class="animation-card-body">
+      <h3 style="color: #ffffff !important;">Gentle Float</h3>
+      <p style="color: #cccccc !important;">Used for hero elements and feature cards to create a sense of depth and modern "hovering" feel in the UI.</p>
+      <div class="css-snippet" style="background: rgba(255,255,255,0.05); color: #6f00ff; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 0.8rem;">
+        animation: float 3s ease-in-out infinite
+      </div>
+    </div>
+  </div>
+
+          <!-- ANIMATION DEMO 3: Float -->
+            <div class="animation-card fade-up">
+    <div class="animation-preview" style="background:#050509; display: flex; align-items: center; justify-content: center;">
+      <div class="demo-type" style="color: #ff00c3; font-family: 'Courier New', monospace; border-right: 2px solid #ff006f; padding-right: 5px;">Asemi-IT_Student</div>
+    </div>
+    <div class="animation-card-body">
+      <h3 style="color: #ffffff !important;">Blinking Cursor</h3>
+      <p style="color: #cccccc !important;">Simulates a terminal or coding environment cursor, reflecting my background as an IT student at NVCC.</p>
+      <div class="css-snippet" style="background: rgba(255,255,255,0.05); color: #7b00ff; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 0.8rem;">
+        animation: blink .8s step-end infinite
+      </div>
+    </div>
+  </div>
+
+</div>
+
+          <!-- ANIMATION DEMO 4: Typing Cursor -->
+          <div class="animation-card fade-up">
+            <div class="animation-preview" style="background:#050509;">
+              <div class="demo-type">Hello World</div>
+            </div>
+            <div class="animation-card-body">
+              <h3>Blinking Cursor</h3>
+              <p>Simulates a typing cursor by animating the border-right color.</p>
+              <div class="css-snippet">animation: blink .8s step-start infinite</div>
+            </div>
+          </div>
+
+          <!-- MY CUSTOM ANIMATION: Neon Glow -->
+<div class="animation-card fade-up">
+  <div class="animation-preview" style="background: #0a0a23; display: flex; align-items: center; justify-content: center;">
+    <div class="asemi-custom-neon">ASEMI</div>
+  </div>
+  <div class="animation-card-body">
+    <h3 style="color: #ffffff !important;">Custom Neon Glow</h3>
+    <p style="color: #cccccc !important;">A personalized text-shadow animation that creates a pulsing neon effect, perfect for a modern IT portfolio.</p>
+    <div class="css-snippet" style="background: rgba(255,255,255,0.05); color: #6a00ff; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 0.8rem;">
+      animation: neonPulse 2s infinite alternate
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TOOLS SECTION ── -->
+    <section class="tools-section">
+      <div class="tools-inner fade-up">
+        <span class="section-label">Tools I Use</span>
+        <h2>My multimedia toolkit</h2>
+
+        <div class="tools-grid">
+          <!-- ★ Replace icons and names with tools YOU actually use -->
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-film-slate" aria-hidden="true"></i></div>
+            <div class="tool-name">Premiere Pro</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-sparkle" aria-hidden="true"></i></div>
+            <div class="tool-name">After Effects</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-palette" aria-hidden="true"></i></div>
+            <div class="tool-name">Photoshop</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-figma-logo" aria-hidden="true"></i></div>
+            <div class="tool-name">Figma</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-camera" aria-hidden="true"></i></div>
+            <div class="tool-name">Photography</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><i class="ph ph-lightbulb" aria-hidden="true"></i></div>
+            <div class="tool-name">Canva</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Interested in working together?</h2>
+          <p>I'm open to creative collaborations, feedback, and conversations.</p>
+        </div>
+        <a href="contact.html" class="btn-primary">Get in Touch →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Asemi Nasypbekova· · Web and Multimedia · NOVA Annandale</p>
+  </footer>
+
+  <!-- ── LIGHTBOX MODAL ──
+    Hidden until a photo is clicked. Shows a large version of the image.
+  ── -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script>
+    // ── MOBILE NAV ──
+    function toggleMobileNav() {
+      document.getElementById("mobileNav").classList.toggle("open");
+    }
+    document.addEventListener("click", function(e) {
+      const nav = document.getElementById("mobileNav");
+      const toggle = document.querySelector(".mobile-toggle");
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove("open");
+    });
+
+    // ── TAB SWITCHER ──
+    // Shows the selected media section, hides all others.
+    function switchTab(btn, tabId) {
+      // Update button states
+      document.querySelectorAll(".tab-btn").forEach(function(b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+
+      // Show target section, hide others
+      document.querySelectorAll(".media-section").forEach(function(section) {
+        section.classList.remove("active");
+      });
+      document.getElementById(tabId).classList.add("active");
+    }
+
+    // ── LIGHTBOX ──
+    // Opens a full-screen modal showing a large image.
+    function openLightbox(src, caption) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox-img").alt = caption;
+      document.getElementById("lightbox-caption").textContent = caption;
+      document.getElementById("lightbox").classList.add("open");
+      document.body.style.overflow = "hidden"; // prevent background scrolling
+    }
+
+    // Close lightbox when clicking outside the image or the × button
+    function closeLightbox(e) {
+      // If event exists and click was on the image itself, don't close
+      if (e && e.target === document.getElementById("lightbox-img")) return;
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.style.overflow = ""; // restore scrolling
+    }
+
+    // Also close with Escape key
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".fade-up").forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

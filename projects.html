@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Asemi's Portfolio</title>
+
+  <!-- ============================================================
+    ★ HOW TO FIND CSS FOR THIS PAGE  (read me!)
+    ──────────────────────────────────────────────────────────
+    All styles for this page live in:  css/projects.css
+
+    TO FIND THE STYLE FOR AN ELEMENT ON THIS PAGE:
+
+      1. Look at the element in the HTML and find its class.
+         Example:  <section class="page-hero">
+         The class is:  page-hero
+
+      2. Open css/projects.css
+
+      3. Press Cmd+F (Mac) or Ctrl+F (Windows) to search.
+         IMPORTANT — put a DOT before the class name:
+           Search:  .page-hero   ← correct (usually 1 rule)
+           Search:  page-hero    ← too many matches
+           Search:  hero         ← way too many matches
+
+    PAGE SECTIONS (in order they appear in css/projects.css):
+
+      1. VARIABLES & RESET  →  :root, body
+      2. HEADER             →  header, .brand, .desktop-nav
+      3. PAGE HERO          →  .page-hero, .page-hero h1
+      4. FILTER BAR         →  .filter-bar, .filter-btn
+      5. PROJECT CARDS      →  .project-card, .card-body
+      6. FEATURED PROJECT   →  .featured-project, .featured-visual
+      7. CTA & FOOTER       →  .cta-band, footer
+      8. ANIMATIONS         →  @keyframes, @media queries
+
+    TIP: Jump to a section by searching for the number with a
+    period (e.g. "4.") or the section title (e.g. "HERO").
+  ============================================================ -->
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a class="brand" href="index.html">Asemi's<span> Portfolio</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMobileNav()"><span></span></button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"      onclick="toggleMobileNav()">Home</a>
+    <a href="about.html"      onclick="toggleMobileNav()">About</a>
+    <a href="projects.html" class="active" onclick="toggleMobileNav()">Projects</a>
+    <a href="multimedia.html" onclick="toggleMobileNav()">Multimedia</a>
+    <a href="contact.html"    onclick="toggleMobileNav()">Contact</a>
+  </nav>
+
+  <main style="padding-top:64px;">
+
+    <!-- ── PAGE HERO ──
+      Pick ONE background style by setting the section's class:
+         class="page-hero hero-gradient"  →  animated gradient (no asset)
+         class="page-hero hero-image"     →  uncomment the <img>  below
+         class="page-hero hero-video"     →  uncomment the <video> below
+      Only ONE media element should be active at a time.
+    ── -->
+    <section class="page-hero hero-gradient">
+
+      <!-- (B) IMAGE OPTION — uncomment, set class="page-hero hero-image" above
+      <img
+        class="page-hero-media"
+        src="https://placehold.co/1920x1080?text=Projects+Hero"
+        alt="" aria-hidden="true" />
+      -->
+
+      <!-- (C) VIDEO OPTION — uncomment, set class="page-hero hero-video" above
+      <video
+        class="page-hero-media"
+        autoplay muted loop playsinline
+        poster="https://placehold.co/1920x1080?text=Projects+Hero+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">My Work</span>
+        <h1>Projects</h1>
+        <p>Web builds, design work, and digital experiments from ITE170 and beyond.</p>
+      </div>
+    </section>
+
+    <!-- ── FILTER BAR ──
+      Clicking a button shows only cards with matching data-category.
+      "All" shows everything.
+      ★ Add or remove category buttons to match YOUR project types ★
+    ── -->
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <button class="filter-btn active" data-filter="all" onclick="filterProjects(this,'all')">All Projects</button>
+        <button class="filter-btn" data-filter="html-css"   onclick="filterProjects(this,'html-css')">HTML / CSS</button>
+        <button class="filter-btn" data-filter="tailwind"   onclick="filterProjects(this,'tailwind')">Excel</button>
+        <button class="filter-btn" data-filter="javascript" onclick="filterProjects(this,'javascript')">GitHub</button>
+        <button class="filter-btn" data-filter="multimedia" onclick="filterProjects(this,'multimedia')">Multimedia</button>
+        <button class="filter-btn" data-filter="design"     onclick="filterProjects(this,'design')">Data Analysis</button>
+      </div>
+    </div>
+
+    <!-- ── PROJECT CARDS ──
+      Each card has a data-category attribute that matches filter buttons.
+      ★ REPLACE every placeholder below with your REAL projects ★
+
+      ── CARD THUMB OPTIONS ──
+      Each card's media area can use ONE of three styles:
+
+      (A) GRADIENT / COLOR  — no asset required
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#804070,#4a1040);">
+            ...badges...
+          </div>
+
+      (B) IMAGE  — drop in a screenshot or photo
+          <div class="card-thumb thumb-image">
+            <img class="thumb-media" src="https://placehold.co/600x400?text=Project+1" alt="..." />
+            ...badges...
+          </div>
+
+      (C) VIDEO  — silent looping clip (great for motion projects)
+          <div class="card-thumb thumb-video">
+            <video class="thumb-media" autoplay muted loop playsinline
+                   poster="https://placehold.co/600x400?text=Project+1+Video">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+            ...badges...
+          </div>
+    ── -->
+    <section class="projects-section">
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- ──────────────────────────────────────────────
+          PROJECT 1  ·  EXAMPLE: GRADIENT thumb
+          ★ Replace: screenshot, category, title, description, tech tags, and live URL
+        ────────────────────────────────────────────── -->
+        <a class="project-card fade-up" data-category="html-css" href="https://canva.link/5rnlq83n9zaijet" aria-label="View Project 1">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#804070,#4a1040);">
+               <img class="thumb-media"
+                 src="images/Gall.jpeg"
+                 alt="Design" >
+            <span class="card-tag">HTML / CSS</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Photography Grid</h3>
+            <p>
+              A responsive web gallery designed to showcase visual content using CSS Grid and Flexbox.
+               This project focuses on high-quality image presentation and mobile-first responsiveness.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">UI Design</span>
+            </div>
+            <!-- ★ Replace # with your actual Netlify URL -->
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 2  ·  EXAMPLE: IMAGE thumb
+             Replace src with your real screenshot. Until then, the dark
+             card-thumb background shows through if the image fails to load. -->
+        <a class="project-card fade-up" data-category="tailwind" href="https://docs.google.com/spreadsheets/d/18noDC2-Ad_JngzOitBz_Pb-3XPdlRBu5/edit?usp=sharing&ouid=112107064921114248010&rtpof=true&sd=true" aria-label="View Project 2">
+          <div class="card-thumb thumb-image"
+               style="--thumb-grad: linear-gradient(135deg,#1a0f2e,#4a90e2); background: var(--thumb-grad);">
+          
+            <img class="thumb-media"
+                 src="images/excel.jpeg"
+                 alt="Excel Project" >
+
+            <span class="card-tag">Excel</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3> Sales Analysis & Automation</h3>
+            <p> Advanced Excel sales system for Pepi PEVs. 
+              Created dynamic PivotTables and interactive charts to automate data processing and trend analysis for the Sales Department.
+              
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">Data Visualization</span>
+              <span class="tech-tag">Automation</span>
+            </div>
+           <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 3  ·  EXAMPLE: VIDEO thumb
+             Use a short, silent, looping clip (5–10s) that previews the project.
+             A poster image shows before the video loads. -->
+        <a class="project-card fade-up" data-category="javascript" href="https://aseminasypbek-lang.github.io/blabla/" aria-label="View Project 3">
+          <div class="card-thumb thumb-video"
+               style="--thumb-grad: linear-gradient(135deg,#0f2040,#1a0f2e); background: var(--thumb-grad);">
+           
+            <img class="thumb-media"
+                    src="images/valant.jpeg"
+                    alt="Interactive Digital Valentine Screenshot" />
+            <span class="card-tag">GitHub</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Interactive Digital Valentine</h3>
+            <p>
+               A personalized interactive card featuring over 300 lines of custom code. 
+               Built with JavaScript to handle complex interaction logic and CSS3 for smooth animations.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">DOM Manipulation</span>
+              <span class="tech-tag">CSS Animation </span>
+            </div>
+            <span class="card-link">View Live Project <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 4  ·  Using GRADIENT (swap to thumb-image / thumb-video any time) -->
+        <a class="project-card fade-up" data-category="multimedia" href="https://canva.link/5y57tr0xcn9zv8f" aria-label="View Project 4">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#2a0f20,#804070);">
+          <img class="thumb-media"
+                 src="images/canvaLogo.png"
+                 alt="Canva Project" >
+            <span class="card-tag">Multimedia</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Graphic Design & Branding</h3>
+            <p>
+              A visual branding project created using Canva. 
+              Includes layout design, color theory application, and typography selection for digital marketing assets.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Canva</span>
+              <span class="tech-tag">Graphic Design</span>
+              <span class="tech-tag">Branding</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 5  ·  Using GRADIENT (swap to thumb-image / thumb-video any time) -->
+        <a class="project-card fade-up" data-category="design" href="https://docs.google.com/presentation/d/1tmJPMqawceEa2HFfuc8p_AUn60IttBkQ/edit?usp=sharing&ouid=112107064921114248010&rtpof=true&sd=true" aria-label="View Project 5">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#0f1a40,#1a4070);">
+               <img class="thumb-media"
+                 src="images/acc.jpeg"
+                 alt="Accounting" >
+            <span class="card-tag">Data Analysis</span>
+            <span class="card-status progress">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Financial Accounting Analysis</h3>
+            <p>
+              A comprehensive presentation on accounting principles and financial reporting. 
+              The project demonstrates data accuracy and the role of modern tools in financial management.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Accounting</span>
+              <span class="tech-tag">Business</span>
+            </div>
+            <span class="card-link">View Prototype <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- PROJECT 6  ·  Add more projects as needed! -->
+        <a class="project-card fade-up" data-category="html-css" href="media/v2.mp4" aria-label="View Project 6">
+          <div class="card-thumb thumb-gradient"
+               style="--thumb-grad: linear-gradient(135deg,#1a2040,#0f2030);">
+               <img class="thumb-media"
+                 src="images/editingIMjpeg.jpeg"
+                 alt="Editing" >
+            <span class="card-tag">Video Editing</span>
+            <span class="card-status done">Completed</span>
+          </div>
+          <div class="card-body">
+            <h3>Multimedia Storytelling</h3>
+            <p>
+              A rhythmic social media edit created with CapCut, focusing on visual transitions and the concept of "Intention." 
+              This project showcases creative video assembly and timing skills.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">After Effects</span>
+              <span class="tech-tag">Creative Direction</span>
+            </div>
+            <span class="card-link">View Live Site <span>→</span></span>
+          </div>
+        </a>
+
+      </div><!-- end .projects-grid -->
+    </section>
+
+    <!-- ── FEATURED PROJECT ──
+      Highlight your BEST project with a larger, more detailed section.
+      ★ Replace with your proudest ITE 170 achievement ★
+    ── -->
+    <section class="featured-project">
+      <div class="featured-inner fade-up">
+
+        <!-- LEFT: Screenshot or visual -->
+        <div class="featured-visual">
+            <img src="images/Screenshot2.png" alt="Featured Project" />
+        </div>
+
+        <!-- RIGHT: Project details -->
+        <div class="featured-text">
+          <div class="featured-badge">⭐ Featured Project</div>
+
+          <!-- ★ Replace with your best project name -->
+          <h2>Interactive Digital Valentine</h2>
+
+          <!-- ★ Replace with a detailed description -->
+          <p>  An interactive, humorous web experience designed to guarantee a "Yes" for a Valentine's date. 
+              I built a custom "runaway" button logic using JavaScript: whenever the user tries to hover over the "No" button, 
+               it dynamically teleports away, making it impossible to click. Once the user finally selects "Yes," 
+              the app triggers a celebratory fireworks animation and a victory message.
+            
+          </p>
+
+          <!-- What you learned / achieved -->
+          <ul class="outcomes">
+            <!-- ★ Replace with YOUR actual outcomes from this project -->
+            <li>Developed complex event listeners and dynamic positioning logic in JavaScript</li>
+            <li>Implemented interactive CSS animations for the "Fireworks" celebration effect</li>
+            <li>Focused on playful UX (User Experience) design to engage and surprise the user</li>
+          </ul>
+
+          <!-- Action buttons -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <!-- ★ Replace # with your live URL -->
+            <a href="https://aseminasypbek-lang.github.io/blabla/" class="btn-primary">View Live Site →</a>
+            <!-- ★ Replace # with GitHub link if you have one -->
+            <a href="https://github.com/aseminasypbek-lang/blabla/blob/main/index.html" class="btn-secondary">View Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band">
+      <div class="cta-inner fade-up">
+        <div class="cta-text">
+          <h2>Want to see my multimedia work?</h2>
+          <p>Video, animation, and interactive media projects from the semester.</p>
+        </div>
+        <a href="multimedia.html" class="btn-primary">Explore Multimedia →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Asemi Nasypbekova· Web and Multimedia · NOVA Annandale</p>
+  </footer>
+
+  <script>
+    // ── MOBILE NAV ──
+    function toggleMobileNav() {
+      document.getElementById("mobileNav").classList.toggle("open");
+    }
+    document.addEventListener("click", function(e) {
+      const nav = document.getElementById("mobileNav");
+      const toggle = document.querySelector(".mobile-toggle");
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) nav.classList.remove("open");
+    });
+
+    // ── PROJECT FILTER ──
+    // When a filter button is clicked, loop through all .project-card elements.
+    // If the card's data-category matches the filter, show it; otherwise hide it.
+    function filterProjects(btn, category) {
+      // 1. Update button styling — remove active from all, add to clicked
+      document.querySelectorAll(".filter-btn").forEach(function(b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+
+      // 2. Show/hide cards based on their data-category attribute
+      document.querySelectorAll(".project-card").forEach(function(card) {
+        if (category === "all") {
+          // "All" shows every card
+          card.classList.remove("hidden");
+        } else if (card.dataset.category === category) {
+          // Matching category — show it
+          card.classList.remove("hidden");
+        } else {
+          // Does not match — hide it
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".fade-up").forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>
